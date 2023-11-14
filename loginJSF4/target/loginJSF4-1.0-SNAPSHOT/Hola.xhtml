@@ -7,6 +7,7 @@
 <f:view>
     <h:head>
         <title> Aplicación JavaServer Faces </title>
+        <h:outputScript library="js" name="infoJavaScript.js" />
     </h:head>
     <h:body>
         <h:form>
@@ -14,6 +15,9 @@
                 <h:outputText value="#{login.nombre}"/>!
             </h3>
             <p>Fecha: <h:outputText value="#{login.fecha}"/></p>
+            <h:commandButton value="Aceptar"
+                             onclick="showMessage('No está definido donde ir')" >
+            </h:commandButton>
         </h:form>
     </h:body>
 </f:view>
