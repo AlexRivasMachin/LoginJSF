@@ -4,6 +4,7 @@ import org.primefaces.event.SelectEvent;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -78,5 +79,16 @@ public class LoginBean {
                 return t;}
         return null;
     }
+
+    public void listener(AjaxBehaviorEvent event) {
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("El tipo del usuario:"+tipo.getCodigo()+"/"+tipo.getTipoUsu()));
+    }
+
+    public void onEventSelect(SelectEvent event) {
+        this.tipo=(TipoUsuario)event.getObject();
+        FacesContext.getCurrentInstance().addMessage("miForm:mensajes",
+                new FacesMessage("El tipo del usuario (tabla):"+tipo.getCodigo()+"/"+tipo.getTipoUsu()));}
 }
+
 

@@ -4,12 +4,17 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-<ui:composition template="/WEB-INF/facelets/templates/Plantilla.xhtml">
-    <ui:define name="titulo">
-        Haz Login
-    </ui:define>
-    <ui:define name="cuerpo">
-        <ui:include src="LoginComponente.xhtml"/>
-    </ui:define>
+<ui:composition>
+<f:view>
+   <h:head>
+      <title> Aplicación JavaServer Faces </title>
+      <h:outputStylesheet library="css" name="style.css"/>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h3> ¡Pirata, no puedes pasar!. </h3>
+      </h:form>
+   </h:body>
+</f:view>
 </ui:composition>
 </html>
